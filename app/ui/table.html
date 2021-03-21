@@ -4,12 +4,12 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="fr">
     <head>
         <title>Meteo</title>
         <meta charset="UTF-8">
-        <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
-        <script type="text/javascript" src="/js/d3.min.js"></script>
+        <script src="/js/jquery-3.5.1.min.js"></script>
+        <script src="/js/d3.min.js"></script>
         <link rel="stylesheet" href="/css/bootstrap_superhero.css"/>
         <link rel="stylesheet" href="/css/bootstrap_adjustment.css"/>
         <link rel="stylesheet" href="/css/basic.css"/>
@@ -37,12 +37,12 @@ and open the template in the editor.
             <div id="content"></div>
             <div id="manage-button">
                 <button class="btn btn-secondary" onclick="getBeforeReset();">begin</button><!--
-                --><button class="btn btn-secondary" onclick="getBefore(1000);"><<<</button><!--
-                --><button class="btn btn-secondary" onclick="getBefore(100);"><<</button><!--
-                --><button class="btn btn-secondary" onclick="getBefore();"><</button><!--
-                --><button class="btn btn-secondary" onclick="getAfter();">></button><!--
-                --><button class="btn btn-secondary" onclick="getAfter(100);">>></button><!--
-                --><button class="btn btn-secondary" onclick="getAfter(1000);">>>></button><!--
+                --><button class="btn btn-secondary" onclick="getBefore(1000);">&lt;&lt;&lt;</button><!--
+                --><button class="btn btn-secondary" onclick="getBefore(100);">&lt;&lt;</button><!--
+                --><button class="btn btn-secondary" onclick="getBefore();">&lt;</button><!--
+                --><button class="btn btn-secondary" onclick="getAfter();">&gt;</button><!--
+                --><button class="btn btn-secondary" onclick="getAfter(100);">&gt;&gt;</button><!--
+                --><button class="btn btn-secondary" onclick="getAfter(1000);">&gt;&gt;&gt;</button><!--
                 --><button class="btn btn-secondary" onclick="getAfterReset();">end</button><!--
                 --><select class="custom-select custom-select-adjustment csa-custom" onChange="updateSortLimit(this.value);" id="number-to-show" name="number-to-show">
                   <option value="10">10</option>
@@ -53,11 +53,47 @@ and open the template in the editor.
                 --><input class="form-control custom-input" onChange="updateSortLimit(this.value);" type="text" name='number-to-show'>
             </div>
             <div id="content-city"></div>
+            <button id="btn-text-hide">DOCUMENTATION</button>
+            <div id="text-div-custom" class="text-div">
+                <h2>Tableau de visualisation de données</h2>
+                <p>Voici notre tableau de visualisation de données</p>
+                <p>Les données sont dans l'ordre suivant :</p>
+                <ul>
+                    <li>Le pays</li>
+                    <li>La ville</li>
+                    <li>La date</li>
+                    <li>La latitude de la station</li>
+                    <li>La longitude de la station</li>
+                    <li>Les précipitations</li>
+                    <li>La quantité de neige</li>
+                    <li>La température moyenne</li>
+                    <li>La température maximale</li>
+                    <li>La température minimale</li>
+                </ul>
+                <p>Certaines valeurs ne sont pas disponibles ce qui correspond à un trou dans le tableau ou une valeur 0 sur les graphes.<br/>
+                Il est donc possible d'avoir des chutes à 0°C</p>
+                <p>Pour le fonctionnement du tableau :</p>
+                <ul>
+                    <li>Il peut-être trié en ascendant ou descendant pour le pays, la ville et la date<br/>
+                        Avec comme ordre de priorité, la date > le pays > la ville</li>
+                    <li>Nous avons la possibilité de demander un affichage plus grand ainsi que de changer la date actuelle</li>
+                    <li>Chaque ville représente un lien pour créer un graphe spécifique à la ville<br/>
+                        Ce graphe peut-être étendu sur la durée, nous pouvons aussi choisir la variables entre tavg, tmin et tmax<br/>
+                        Nous pouvons retrouver ce graphe avec la <a href="/map">map</a></li>
+                </ul>
+                <p><i>ps : pour cacher ce panel il suffit de cliquer dessus</i></p>
+            </div>
         </div>
         <footer id="footer">
+            <div>
+                <p>Site web de visualisation créé par :</p>
+                <p>GUERET Morgan - 21700094</p>
+                <p>CARDOSO Simon - 21605269</p>
+            </div>
         </footer>
-    </body>
 
-    <script type="text/javascript" src="js/table.js"></script>
-    <script type="text/javascript" src="js/draw.js"></script>
+        <script src="/js/hide.js"></script>
+        <script src="/js/table.js"></script>
+        <script src="/js/draw.js"></script>
+    </body>
 </html>
