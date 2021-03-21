@@ -195,33 +195,3 @@ input[type="checkbox"] { position: absolute; opacity: 0; z-index: -1; }
 .td-city:hover {
 	background-color: #3e1e08;
 }
-
-
-/*
-keyframes animation
-*/
-
-@keyframes display_in {
-	0% {
-		width: 0px;
-		opacity: 0;
-		transform: scaleX(0);
-	}
-	100% {
-		width: 37px;
-		opacity: 1;
-		transform: scaleX(1);
-	}
-}
-@keyframes display_out {
-	0% {
-		width: 37px;
-		opacity: 1;
-		transform: scaleX(1);
-	}
-	100% {
-		width: 0px;
-		opacity: 0;
-		transform: scaleX(0);
-	}
-}
