@@ -1,0 +1,36 @@
+<html><head><style>body {
+   color: white;
+   background-color: #27282E;
+
+}
+
+a {
+   color: #df691a;
+}
+</style></head><body><p>GUERET Morgan<br>CARDOSO Simon  </p>
+<hr>
+<h1 id="dm-base-de-donn-es">DM Base de données</h1>
+<p>Le site web interractif est accessible à l&#39;url <a href="http://localhost">localhost</a><br>Si le site tourne sur une vm en pont il est accessible grâce à l&#39;ip de la vm ex : <a href="http://192.168.1.15">http://192.168.1.15</a>  </p>
+<p>La base de données est appelée <em>weather_db</em> avec pour collection principale <em>weather</em> et traite la météo<br>entre <em>2000</em> et <em>2021</em> pour 10 villes d&#39;<em>Europe</em>:</p>
+<ul>
+<li>4 en <em>France</em> ( <em>Bordeaux</em>, <em>Caen</em>, <em>Nice</em> et <em>Paris</em> )</li>
+<li>3 en Allemagne ( <em>Hambourg</em>, <em>Nuremberg</em> et <em>Sarrebruck</em> )</li>
+<li>3 en Espagne ( <em>Barcelone</em>, <em>Madrid</em> et <em>Seville</em> )</li>
+</ul>
+<p>Les villes sont sélectionnées selon la quantité de données disponible</p>
+<h2 id="organisation-">Organisation :</h2>
+<p>Le dossier contient:</p>
+<ul>
+<li><em>app/</em> : le server nodejs pour faire tourner le site, il est lancé sur le port 8080<br>qui est transformé en port 80 par <em>Docker-compose</em></li>
+<li><em>graphql/</em> : le serveur nodejs pour faire tourner graphql, le playground est actif, il tourne sur le port 4000</li>
+<li><em>data/</em> : sera partagé avec le conteneur mongo, il contient le fichier json représentant la base de données<br>ainsi qu&#39;un fichier check.js pour vérifier si la base de données <em>weather_db</em> contient les données ou non<br>(utilisé par <em>run.sh</em>)</li>
+<li><em>dockerfiles/</em> : deux fichiers pour créer les conteneurs des serveurs nodejs</li>
+<li><em>dm_stack.yml</em> : permet de démarrer la pile de conteneurs, il y en a 4 (mongo, mong-express, graphql et app)</li>
+<li><em>run.sh</em> : permet de démarrer la pile grâce à <em>dm_stack.yml</em> mais aussi de vérifier si la base <em>mongo</em> contient des données<br>sinon importe les données à partir du fichier json partagé par <em>data/</em></li>
+<li><em>stop.sh</em> : permet de stopper la pile grâce à <em>dm_stack.yml</em></li>
+<li><em>util.txt</em> : ensemble de commandes utiles pour  le bon fonctionnement au cas où</li>
+</ul>
+<h2 id="lancement-">Lancement :</h2>
+<p>Le plus simple est d&#39;exécuter le fichier <em>run.sh</em> et d&#39;arrêter avec le fichier <em>stop.sh</em><br>A noter : il peut y avoir un problème avec le nom du docker mongo lors de la création,<br>Notamment si plusieurs conteneurs mongo sont créés dans le même dossier.</p>
+<p>Pour contrer : il suffit de modifier dans <em>run.sh</em> la variable <em>basename</em> avec le numéro du conteneur<br>ou la variable <em>container</em> avec le nom du conteneur en dur</p>
+</body></html>

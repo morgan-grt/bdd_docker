@@ -1,3 +1,6 @@
+# en partant du principe que le conteneur mongo
+# se nomme "dm_mongo_1" sinon modifier avec le nouveau nom
+
 # pour utiliser le terminal du conteneur:
 docker exec -it dm_mongo_1 bash
 
