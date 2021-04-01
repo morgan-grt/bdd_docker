@@ -43,3 +43,6 @@ Notamment si plusieurs conteneurs mongo sont créés dans le même dossier.
 
 Pour contrer : il suffit de modifier dans *run.sh* la variable *basename* avec le numéro du conteneur  
 ou la variable *container* avec le nom du conteneur en dur
+
+Il peut y avoir un problème d'utilisation de port notamment le port 80 (apache...), dans ce cas il faut soi  
+par exemple arrêter le service apache sinon changer le port de destination dans dm_stack avec pour port destination:interne
