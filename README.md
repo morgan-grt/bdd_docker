@@ -35,6 +35,8 @@ sinon importe les données à partir du fichier json partagé par *data/*
 
 ## Lancement :
 
+Maj 01/04 : La stack construit elle même les conteneurs!
+
 Le plus simple est d'exécuter le fichier *run.sh* et d'arrêter avec le fichier *stop.sh*  
 A noter : il peut y avoir un problème avec le nom du docker mongo lors de la création,  
 Notamment si plusieurs conteneurs mongo sont créés dans le même dossier.
