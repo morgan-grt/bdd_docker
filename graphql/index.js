@@ -12,7 +12,7 @@ const typeDefs = fs.readFileSync(path.join(__dirname, 'model.graphql'),{encoding
 
 // définition du serveur
 const server = new ApolloServer({ 
-	typeDefs, resolvers
+	typeDefs, resolvers, playground: false
 });
 
 // lancement du serveur
